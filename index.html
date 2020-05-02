@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+     google.charts.load('current', {
+       'packages': ['geochart'],
+       // Note: you will need to get a mapsApiKey for your project.
+       // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+       'mapsApiKey': 'AIzaSyDU35cW5-Oku1GsavGYm1XG-3Wo5otVG-4'
+     });
+     google.charts.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['County',   '# number of companies'],
+       ['Ambler', 3],
+['Aston', 2],
+['Audubon', 1],
+['Bala Cynwyd', 1],
+['Bensalem', 1],
+['Berwyn', 4],
+['Blue Bell', 2],
+['Bristol', 1],
+['Broomall', 1],
+['Chadds Ford', 3],
+['Chester Springs', 2],
+['Chesterbrook', 2],
+['Conshohocken', 8],
+['Devon', 4],
+['Downingtown', 1],
+['Doylestown', 2],
+['Eagleville', 1],
+['Elkins Park', 1],
+['Essington', 1],
+['Exton', 3],
+['Fort Washington', 3],
+['Ft Washington', 1],
+['Furlong', 1],
+['Glen Mills', 2],
+['Glenmoore', 1],
+['Glenside', 1],
+['Harleysville', 1],
+['Hatboro', 1],
+['Hatfield', 1],
+['Ivyland', 1],
+['Jenkintown', 6],
+['Kennett Square', 2],
+['King of Prussia', 5],
+['Langhorne', 1],
+['Lansdale', 1],
+['Lansdowne', 1],
+['Lower Gwynedd', 1],
+['Lumberville', 1],
+['Malvern', 9],
+['Montgomeryville', 2],
+['New Hope', 1],
+['Newtown', 1],
+['Penllyn', 1],
+['Perkasie', 1],
+['Philadelphia', 98],
+['Pipersville', 1],
+['Plymouth Meeting', 2],
+['Pottstown', 2],
+['Southampton', 1],
+['Spring City', 1],
+['Spring House', 1],
+['Springfield', 1],
+['Swarthmore', 1],
+['Trevose', 1],
+['Villanova', 1],
+['Warminster', 1],
+['Wayne', 9],
+['West Chester', 3],
+['Willow Grove', 1],
+['Wynnewood', 4],
+['Yardley', 2]
+],);
+
+      var options = {
+          resolution:'provinces',
+        region: 'US-PA',
+        displayMode: 'markers',
+        colorAxis: {colors: ['green', 'blue']}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data,options);
+    };
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
